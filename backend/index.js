@@ -5,6 +5,9 @@ const {
 	StatusCodes,
 } = require("http-status-codes");
 
+const { DataRouter } = require("./routes/data");
+const { errorMiddleware } = require("./middleware/error");
+
 const app = express();
 
 
@@ -27,6 +30,8 @@ app.get("/", (req, res, next) => {
 		});
 });
 
+app.use("/api/v1/data", DataRouter);
+
 
 app.use("*", (req, res, next) => {
 	res.status(StatusCodes.NOT_FOUND)
@@ -34,6 +39,8 @@ app.use("*", (req, res, next) => {
 			error: "Page not found",
 		})
 })
+
+app.use(errorMiddleware)
 
 const startServer = async () => {
 	try {
