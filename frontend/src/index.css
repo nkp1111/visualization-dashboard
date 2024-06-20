@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 #1f2937; /* thumb color and track color */
+  }
+
+  .scrollbar-thumb-rounded {
+    scrollbar-thumb: rounded;
+  }
+
+  .scrollbar-thumb {
+    scrollbar-thumb-color: #6b7280;
+  }
+
+  .scrollbar-track {
+    scrollbar-track-color: #1f2937;
+  }
+}
