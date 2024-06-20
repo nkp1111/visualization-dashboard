@@ -17,7 +17,9 @@ export const applyFilter = (data, filters) => {
       }
     })
 
-    if (isPassed) dataToShow.push(item);
+    if (isPassed) {
+      dataToShow.push(item);
+    }
   })
   return dataToShow;
 }
