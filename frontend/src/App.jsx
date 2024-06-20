@@ -26,7 +26,7 @@ function App() {
           setDataToShow={setDataToShow}
         />
 
-        <LineChart />
+        <LineChart data={dataToShow} />
       </div>
 
 
