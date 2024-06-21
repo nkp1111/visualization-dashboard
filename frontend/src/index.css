@@ -22,3 +22,17 @@
     scrollbar-track-color: #1f2937;
   }
 }
+
+
+/* for charts */
+.tick {
+  font-size: 1rem;
+}
+.label {
+  text-anchor: middle;
+  font-size: 1.7em;
+  fill: #635F5D;
+}
+.y-axis-label-transform {
+  transform: translate(50px, 100%) rotate(-90deg);
+}
