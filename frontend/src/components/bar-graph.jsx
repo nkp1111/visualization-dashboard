@@ -90,6 +90,16 @@ export default function BarGraph({ data = [] }) {
         .attr("y", (d) => yScale(yValue(d)))
         .text((d) => d.country)
 
+      mainEl.append("g")
+        .selectAll("line")
+        .data(xScale.ticks())
+        .enter()
+        .append("g")
+        .attr("transform", (d) => `translate(${xScale(d)}, 0)`)
+        .append("line")
+        .attr("y2", innerHeight)
+        .attr("stroke", "#c0c0bb")
+
       mainEl.append("text")
         .text("Count")
         .attr("x", innerWidth / 2)

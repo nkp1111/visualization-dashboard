@@ -5,6 +5,7 @@ import LineChart from "./components/line-chart";
 import BarGraph from "./components/bar-graph"
 import Filter from "./components/filter";
 import WorldMap from "./components/world-map";
+import ScatterPlot from "./components/scatter-plot";
 
 function App() {
   const [data, setData] = useState([]);
@@ -35,6 +36,8 @@ function App() {
         <BarGraph data={data} />
 
         <WorldMap data={data} />
+
+        <ScatterPlot data={data} />
       </div>
 
 
