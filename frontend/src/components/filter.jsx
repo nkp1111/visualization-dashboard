@@ -34,6 +34,9 @@ export default function Filter({
 
   const [filterCriteria, setFilterCriteria] = useState(FILTERS);
   const [appliedFilter, setAppliedFilter] = useState(FILTERS);
+  const clearAppliedFilters = () => {
+    setAppliedFilter(FILTERS);
+  }
 
   useEffect(() => {
     // go through data to get filters
@@ -73,7 +76,9 @@ export default function Filter({
 
   // by default show all data result
   useEffect(() => {
+    // console.log(appliedFilter, 'changed')
     const filteredData = applyFilter(data, appliedFilter);
+    // console.log(filteredData.length, "filtered data length")
     setDataToShow(() => filteredData);
   }, [appliedFilter, data, setDataToShow]);
 
@@ -120,7 +125,7 @@ export default function Filter({
                             type="radio"
                             name="end_year"
                             className="radio radio-primary"
-                            checked={appliedFilter.end_year?.[0] === item}
+                            checked={appliedFilter.end_year.length > 0 && appliedFilter.end_year[0] === item}
                             onChange={() => setAppliedFilter((pre) => ({ ...pre, end_year: [item] }))}
                           />
                         </label>
@@ -156,8 +161,8 @@ export default function Filter({
         </div>
 
         <div className="shadow-sm flex">
-          <button className="btn rounded-none bg-primary-content text-primary flex-1 uppercase hover:bg-primary-content hover:opacity-95">clear filters</button>
-          <button className="btn rounded-none bg-primary text-primary-content flex-1 uppercase hover:bg-primary hover:opacity-95">apply</button>
+          <button className="btn rounded-none bg-primary-content text-primary flex-1 uppercase hover:bg-primary-content hover:opacity-95" onClick={clearAppliedFilters}>clear filters</button>
+          {/* <button className="btn rounded-none bg-primary text-primary-content flex-1 uppercase hover:bg-primary hover:opacity-95">apply</button> */}
         </div>
       </aside>
     </section>

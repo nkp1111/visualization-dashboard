@@ -82,7 +82,7 @@ export default function LineChart({ data = [] }) {
           maxYValue = d3.max(aggregatedData, d => yValue3(d));
           break;
         default:
-          console.log("All trend chosen")
+          // console.log("All trend chosen")
           break;
       }
 
@@ -164,7 +164,7 @@ export default function LineChart({ data = [] }) {
 
     }
 
-  }, [data, chosenTrend]);
+  }, [dataset, chosenTrend]);
 
 
   return (
