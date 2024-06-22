@@ -101,12 +101,13 @@ export default function BarGraph({ data = [] }) {
         .attr("stroke", "#c0c0bb")
 
       mainEl.append("text")
+        .attr("class", "label")
         .text("Count")
         .attr("x", innerWidth / 2)
         .attr("y", innerHeight + 50)
 
       mainEl.append("text")
-        .attr("class", "-rotate-90")
+        .attr("class", "label -rotate-90")
         .text("Country")
         .attr("x", -innerHeight / 2)
         .attr("y", -15)

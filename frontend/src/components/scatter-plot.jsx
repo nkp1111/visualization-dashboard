@@ -109,14 +109,14 @@ export default function ScatterPlot({ data = [] }) {
 
       // x-axis label
       mainEl.append("text")
-        .attr("class", "text-xl stroke-blue-500 capitalize fill-green-500")
+        .attr("class", "label stroke-blue-500 capitalize fill-green-500")
         .text(xAxisLabel)
         .attr("x", innerWidth / 2)
         .attr("y", innerHeight + xlabelOffset)
 
       // y-axis label
       mainEl.append("text")
-        .attr("class", "text-xl stroke-green-500 capitalize fill-green-500")
+        .attr("class", "label stroke-green-500 capitalize fill-green-500")
         .text(yAxisLabel)
         .attr("transform", `translate(${-ylabelOffset}, ${innerHeight / 2}) rotate(-90)`)
 

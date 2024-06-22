@@ -6,6 +6,7 @@ import BarGraph from "./components/bar-graph"
 import Filter from "./components/filter";
 import WorldMap from "./components/world-map";
 import ScatterPlot from "./components/scatter-plot";
+import PieChart from "./components/pie-chart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -24,7 +25,7 @@ function App() {
 
       <p className="text-center">The objective is to create visualization dashboard using D3 framework.</p>
 
-      <div className="md:w-3/4 w-full md:px-16 px-8 mx-auto flex flex-col">
+      <div className="lg:w-3/4 w-full md:px-16 px-8 mx-auto flex flex-col">
 
         <Filter
           data={data}
@@ -38,6 +39,8 @@ function App() {
         <WorldMap data={data} />
 
         <ScatterPlot data={data} />
+
+        <PieChart data={data} />
       </div>
 
 
