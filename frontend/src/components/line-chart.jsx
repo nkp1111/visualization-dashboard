@@ -171,42 +171,19 @@ export default function LineChart({ data = [] }) {
     <article className="my-5 w-full border-2 border-base-200 p-3">
       <h3 className="text-xl text-base-content mt-3">Trends of <em>Relevance</em>, <em>Intensity</em>, and <em>Likelihood</em> over time</h3>
       <div className="flex gap-5 items-center my-3 ps-6">
-        <label className="flex items-center gap-2">
-          <input type="radio"
-            name="radio-7"
-            value="relevance"
-            className="radio radio-info"
-            onChange={(e) => handleTrendChange(e.target.value)}
-            checked={chosenTrend === "relevance"} />
-          <span className="cursor-pointer">Relevance</span>
-        </label>
-        <label className="flex items-center gap-2">
-          <input type="radio"
-            name="radio-7"
-            value="intensity"
-            className="radio radio-info"
-            onChange={(e) => handleTrendChange(e.target.value)}
-            checked={chosenTrend === "intensity"} />
-          <span className="cursor-pointer">Intensity</span>
-        </label>
-        <label className="flex items-center gap-2">
-          <input type="radio"
-            name="radio-7"
-            value="likelihood"
-            className="radio radio-info"
-            onChange={(e) => handleTrendChange(e.target.value)}
-            checked={chosenTrend === "likelihood"} />
-          <span className="cursor-pointer">Likelihood</span>
-        </label>
-        <label className="flex items-center gap-2">
-          <input type="radio"
-            name="radio-7"
-            value="all"
-            className="radio radio-info"
-            onChange={(e) => handleTrendChange(e.target.value)}
-            checked={chosenTrend === "all"} />
-          <span className="cursor-pointer">All</span>
-        </label>
+        {["relevance", "intensity", "likelihood", "all"].map(trend => (
+          <label key={trend} className="flex items-center gap-2">
+            <input
+              type="radio"
+              name="radio-7"
+              value={trend}
+              className="radio radio-info"
+              onChange={(e) => handleTrendChange(e.target.value)}
+              checked={chosenTrend === trend}
+            />
+            <span className="cursor-pointer">{trend.charAt(0).toUpperCase() + trend.slice(1)}</span>
+          </label>
+        ))}
       </div>
       <svg
         className="d3-component w-full stroke-base-content"

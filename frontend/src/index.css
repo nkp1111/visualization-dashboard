@@ -36,3 +36,20 @@
 .y-axis-label-transform {
   transform: translate(50px, 100%) rotate(-90deg);
 }
+
+/* for world map  */
+ .land {
+  fill:#e3cf96;;
+}
+ .interiors {
+  fill: none;
+  stroke: #d9dfe0;
+}
+.graticules {
+  fill: none;
+  stroke: #ececec;
+}
+.sphere {
+  fill: #b5d2ff;
+  stroke: none;
+}
