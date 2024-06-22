@@ -25,23 +25,29 @@ function App() {
 
       <p className="text-center">The objective is to create visualization dashboard using D3 framework.</p>
 
-      <div className="lg:w-3/4 w-full md:px-16 px-8 mx-auto flex flex-col">
+      {data && data.length > 0 ? (
+        <div className="lg:w-3/4 w-full md:px-16 px-8 mx-auto flex flex-col overflow-x-hidden">
+          <Filter
+            data={data}
+            setDataToShow={setDataToShow}
+          />
 
-        <Filter
-          data={data}
-          setDataToShow={setDataToShow}
-        />
+          <LineChart data={dataToShow} />
 
-        <LineChart data={dataToShow} />
+          <BarGraph data={data} />
 
-        <BarGraph data={data} />
+          <WorldMap data={data} />
 
-        <WorldMap data={data} />
+          <ScatterPlot data={data} />
 
-        <ScatterPlot data={data} />
-
-        <PieChart data={data} />
-      </div>
+          <PieChart data={data} />
+        </div>
+      ) : (
+        <div className="flex flex-col mt-20 items-center">
+          <span className="loading loading-spinner loading-lg bg-error"></span>
+          <span>No data found, check database connection...</span>
+        </div>
+      )}
 
 
     </main>
