@@ -13,7 +13,7 @@
 ## Links
 
 - [github link](https://github.com/nkp1111/visualization-dashboard)
-- [live server link]()
+- [live server link](https://visualization-dashboard-client-tawny.vercel.app/)
 
 ## Features
 
